@@ -1,0 +1,204 @@
+
+/* =====================================
+   ECONOMICS PORTFOLIO
+   GLOBAL DESIGN SYSTEM
+===================================== */
+
+/* 1. CSS VARIABLES */
+
+:root {
+  font-family: "Inter", "Segoe UI", sans-serif;
+
+  color: #172b46;
+  background: #ffffff;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --primary: #172b46;
+  --primary-light: #263f60;
+
+  --accent: #c5a46d;
+  --accent-light: #e9dcc5;
+
+  --background: #ffffff;
+  --background-soft: #f6f8fb;
+
+  --text-primary: #172b46;
+  --text-secondary: #64748b;
+  --text-light: #94a3b8;
+
+  --border: #e5eaf0;
+
+  --font-heading: "Georgia", serif;
+  --font-body: "Inter", "Segoe UI", sans-serif;
+
+  --container-width: 1200px;
+
+  --section-spacing: 100px;
+
+  --transition: all 0.3s ease;
+}
+
+/* 2. RESET */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  min-width: 320px;
+  font-family: var(--font-body);
+  background: var(--background);
+  color: var(--text-primary);
+  line-height: 1.7;
+}
+
+/* 3. COMMON ELEMENTS */
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+/* 4. GLOBAL CONTAINER */
+
+.container {
+  width: min(90%, var(--container-width));
+  margin-inline: auto;
+}
+
+/* 5. TYPOGRAPHY */
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--text-primary);
+}
+
+p {
+  color: var(--text-secondary);
+}
+
+/* 6. BUTTONS */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 13px 26px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: #ffffff;
+  border: 1px solid var(--primary);
+}
+
+.btn-primary:hover {
+  background: var(--primary-light);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--primary);
+  border: 1px solid var(--primary);
+}
+
+.btn-outline:hover {
+  background: var(--primary);
+  color: #ffffff;
+}
+
+/* 7. SECTION STYLING */
+
+.section {
+  padding: var(--section-spacing) 0;
+}
+
+.section-subtitle {
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: clamp(30px, 4vw, 44px);
+  margin-top: 12px;
+  margin-bottom: 18px;
+}
+
+/* 8. SELECTION */
+
+::selection {
+  background: var(--accent-light);
+  color: var(--primary);
+}
+
+/* 9. RESPONSIVE SETTINGS */
+
+@media (max-width: 768px) {
+  :root {
+    --section-spacing: 70px;
+  }
+
+  .container {
+    width: 90%;
+  }
+
+  .btn {
+    padding: 12px 20px;
+  }
+}
+
+/* 10. ACCESSIBILITY */
+
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
